@@ -1,0 +1,29 @@
+# Template file for 'cpdup'
+pkgname=cpdup
+version=1.18
+revision=1
+wrksrc="cpdup"
+short_desc="Mirroring program"
+maintainer="Isnogudus <jmt@lf28.net>"
+license="BSD"
+build_style="gnu-makefile"
+homepage="http://apollo.backplane.com/FreeSrc/"
+distfiles="http://apollo.backplane.com/FreeSrc/${pkgname}-${version}.tgz"
+checksum=3893de9a8ebe5543b9b11c4b575075e59509ddb0f26e6229b2554ee625d25687
+
+pre_build() {
+	sed -i 's/__unused/__cpdup_unused/' *.c
+	#echo "#define strlcpy(a,b,c) strncpy(a,b,c)" >> cpdup.h
+	echo "typedef unsigned long int u_long;" >> cpdup.h
+
+	cp ${FILESDIR}/Makefile Makefile
+	head -n 9 cpdup.c > COPYRIGHT
+}
+do_build() {
+	make
+}
+do_install() {
+	vbin ./cpdup
+	vman ./cpdup.1
+	vlicense COPYRIGHT
+}
