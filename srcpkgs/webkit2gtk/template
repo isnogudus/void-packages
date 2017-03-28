@@ -1,7 +1,7 @@
 # Template file for 'webkit2gtk'
 pkgname=webkit2gtk
-version=2.14.4
-revision=1
+version=2.16.0
+revision=2
 wrksrc="webkitgtk-$version"
 build_style=cmake
 configure_args="-DPORT=GTK -DENABLE_GTKDOC=OFF -DCMAKE_LINKER=${XBPS_CROSS_TRIPLET}-gcc"
@@ -10,7 +10,7 @@ maintainer="Enno Boland <gottox@voidlinux.eu>"
 homepage="http://webkitgtk.org/"
 license="LGPL-2.1, 2-clause-BSD"
 distfiles="${homepage}/releases/webkitgtk-${version}.tar.xz"
-checksum=d1ae2df51dd4ee44b9b89421a436ef71062816308738c3712ecf4bec3ccbe3ac
+checksum=5ea371d8910ef3ce7f7d087242c5646f8f3073a5298287c9eb60e055ec107cdc
 
 # ETOOHUGE
 nodebug=1
@@ -20,11 +20,16 @@ makedepends="
  at-spi2-core-devel libjpeg-turbo-devel libpng-devel sqlite-devel
  harfbuzz-devel gst-plugins-base1-devel libsoup-devel libxslt-devel
  gnutls-devel icu-devel enchant-devel dbus-glib-devel libwebp-devel
- gtk+-devel gtk+3-devel libgudev-devel libsecret-devel ruby-devel geoclue2
- libnotify-devel hyphen-devel"
+ gtk+-devel gtk+3-devel libgudev-devel libsecret-devel ruby-devel
+ geoclue2-devel libnotify-devel hyphen-devel"
 
 case "$XBPS_TARGET_MACHINE" in
-	armv6*) CXXFLAGS="-D__GCC_HAVE_SYNC_COMPARE_AND_SWAP_8=1"
+aarch64*)
+	broken="https://build.voidlinux.eu/builders/aarch64_builder/builds/1709/steps/shell_3/logs/stdio" ;;
+armv6*)
+	configure_args+=" -DENABLE_JIT=0"
+	CXXFLAGS="-D__GCC_HAVE_SYNC_COMPARE_AND_SWAP_8=1"
+	;;
 esac
 
 # Package build options

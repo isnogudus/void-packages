@@ -1,6 +1,6 @@
 # Template file for 'go-ipfs'
 pkgname=go-ipfs
-version=0.4.5
+version=0.4.7
 revision=1
 create_wrksrc=yes
 build_wrksrc=${pkgname}-${version}
@@ -14,8 +14,8 @@ license="MIT"
 homepage="https://ipfs.io"
 distfiles="https://${go_import_path}/archive/v${version}.tar.gz
  http://the-brannons.com/ipfs-gx-deps-${version}.tar.xz"
-checksum="1b238e729490d143fc49bdd4568d89e6afeb9607efda9d8dbd30a290a9276838
- f2ccc5ea10210cea3a70e960526853ce229bb6e3a6c315e6cc4571f6affbd9e9"
+checksum="ab5db0e85b6131715a16b853537cc42335460ccbd8a6d4a3ad05ac17beeb8250
+ 64497a06056f67100216a9f78442e5140039c470ac790686de20f4a88ca43758"
 
 do_build() {
 	local path="${GOPATH}/src/${go_import_path}"

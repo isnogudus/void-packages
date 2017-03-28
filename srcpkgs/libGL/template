@@ -1,31 +1,37 @@
 # Template build file for 'libGL'.
 pkgname=libGL
-version=17.0.0
+version=17.0.2
 revision=1
 wrksrc="mesa-${version}"
 build_style=gnu-configure
 configure_args="--enable-shared-glapi --enable-gbm
  --enable-gles1 --enable-gles2 --enable-egl --enable-vdpau
  --enable-xvmc --enable-osmesa --enable-texture-float
- --with-egl-platforms=x11,drm,wayland"
+ --with-egl-platforms=x11,drm,$(vopt_if wayland wayland)"
 short_desc="Graphics library similar to SGI's OpenGL"
 maintainer="Juan RP <xtraeme@voidlinux.eu>"
 homepage="http://www.mesa3d.org/"
 license="MIT, LGPL-2.1"
-distfiles="https://mesa.freedesktop.org/archive/${version}/mesa-${version}.tar.xz"
-checksum=39db3d59700159add7f977307d12a7dfe016363e760ad82280ac4168ea668481
+distfiles="https://mesa.freedesktop.org/archive/mesa-${version}.tar.xz"
+checksum=f8f191f909e01e65de38d5bdea5fb057f21649a3aed20948be02348e77a689d4
 
 hostmakedepends="
- automake libtool flex pkg-config llvm python-Mako libxml2-python wayland-devel"
+ automake libtool flex pkg-config llvm python-Mako libxml2-python $(vopt_if wayland wayland-devel)"
 makedepends="
  glproto dri2proto dri3proto presentproto libXext-devel libXxf86vm-devel
  eudev-libudev-devel libdrm-devel expat-devel talloc-devel libvdpau-devel libva-devel
- libXdamage-devel libXvMC-devel libxshmfence-devel wayland-devel
+ libXdamage-devel libXvMC-devel libxshmfence-devel $(vopt_if wayland wayland-devel)
  elfutils-devel ncurses-devel zlib-devel libffi-devel"
 conf_files="/etc/drirc"
 
+# Package build options
+build_options="wayland"
+
+# Enable all options by default.
+build_options_default="wayland"
+
 # Set subpackages manually to set proper rdeps in 32bit pkgs.
-subpackages="libglapi libgbm libEGL libGLES libOSMesa libwayland-egl"
+subpackages="libglapi libgbm libEGL libGLES libOSMesa $(vopt_if wayland libwayland-egl)"
 
 case "$XBPS_TARGET_MACHINE" in
 i686*|x86_64*)
@@ -123,7 +129,7 @@ MesaLib-devel_package() {
 		libGL>=${version}_${revision}
 		libGLES>=${version}_${revision} libEGL>=${version}_${revision}
 		libOSMesa>=${version}_${revision} libgbm>=${version}_${revision}
-		libwayland-egl>=${version}_${revision}"
+		$(vopt_if wayland libwayland-egl>=${version}_${revision})"
 	case "$XBPS_TARGET_MACHINE" in
 		i686*|x86_64*)  depends+=" libxatracker>=${version}_${revision}";;
 	esac

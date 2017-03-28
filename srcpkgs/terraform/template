@@ -1,6 +1,6 @@
 # Template file for 'terraform'
 pkgname=terraform
-version=0.8.6
+version=0.9.1
 revision=1
 build_style=go
 short_desc="A tool for building, changing, and combining infrastructure"
@@ -9,4 +9,8 @@ license="MPL-2.0"
 homepage="https://www.terraform.io/"
 go_import_path="github.com/hashicorp/$pkgname"
 distfiles="https://$go_import_path/archive/v$version.tar.gz"
-checksum=b6a346ef9956712f71efcbec09e29d6dedb3153485b1730a09be4613057f2355
+checksum=af8402ce84b85a16cfac3796c1f30f229a0d0e93585c6c618af2f25aae067e65
+
+case "${XBPS_TARGET_MACHINE}" in
+      arm*) broken="https://build.voidlinux.eu/builders/armv7l_builder/builds/1032/steps/shell_3/logs/stdio" ;;
+esac
