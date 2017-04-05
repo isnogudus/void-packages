@@ -469,7 +469,7 @@ libphysfs.so.1 physfs-2.0.0_1
 libSDL_ttf-2.0.so.0 SDL_ttf-2.0.9_1
 libparted.so.2 libparted-3.1_1
 libparted-fs-resize.so.0 libparted-3.1_1
-libntfs-3g.so.87 ntfs-3g-2016.2.22_1
+libntfs-3g.so.88 ntfs-3g-2017.3.23_1
 libruby.so.2.4 ruby-2.4.0_1
 libxenctrl.so.4.7 xen-libs-4.7_1
 libxenguest.so.4.7 xen-libs-4.7_1
@@ -1542,7 +1542,7 @@ libwx_gtk2u_webview-3.0.so.0 wxWidgets-3.0.2_3
 libmspack.so.0 libmspack-0.4alpha_1
 libslim.so.1.3.6 slim-1.3.6_1
 libmozjs-24.so mozjs24-24.2.0_1
-libmediaart-1.0.so.0 libmediaart-0.3.0_1
+libmediaart-2.0.so.0 libmediaart-1.9.1_1
 libinput.so.10 libinput-1.2.0_1
 libvaladoc.so.0 valadoc-git-20140327_1
 libuhttpmock-0.0.so.0 uhttpmock-0.2.0_1
@@ -1790,6 +1790,7 @@ libslab.so.0 libmate-control-center-1.8.2_1
 liblz4.so.1 lz4-1.7.3_1
 libatrilview.so.3 libatril-1.8.0_1
 libatrildocument.so.3 libatril-1.8.0_1
+libjawt.so openjdk-jre-8u20_1
 libawt.so openjdk-jre-8u20_1
 libawt_xawt.so openjdk-jre-8u20_1
 libjava.so openjdk-jre-8u20_1
@@ -2086,8 +2087,8 @@ libsfml-graphics.so.2.4 SFML-2.4.1_1
 libclamav.so.7 clamav-0.98.6_1
 libclamunrar.so.7 clamav-0.98.6_1
 libclamunrar_iface.so.7 clamav-0.98.6_1
-libqca.so.2 qca-qt5-2.1.0_1
-libqt5keychain.so.0 qtkeychain-qt5-0.4.0_1
+libqca-qt5.so.2 qca-qt5-2.1.3_1
+libqt5keychain.so.1 qtkeychain-qt5-0.7.0_1
 libphonon4qt5.so.4 phonon-qt5-4.8.3_1
 libphonon4qt5experimental.so.4 phonon-qt5-4.8.3_1
 libtelepathy-qt5.so.0 telepathy-qt5-0.9.5_1
@@ -2097,7 +2098,7 @@ libKF5Attica.so.5 attica-qt5-5.6.0_1
 libechonest5.so.2.3 libechonest-qt5-2.3.0_1
 liblastfm_fingerprint5.so.1 liblastfm-qt5-1.0.9_1
 liblastfm5.so.1 liblastfm-qt5-1.0.9_1
-libquazip.so.1 quazip-qt5-0.7.1_1
+libquazip5.so.1 quazip-qt5-0.7.3_2
 libjreen-qt5.so.1 jreen-qt5-1.2.0_1
 libtomahawk.so.0.8.4 tomahawk-qt5-0.8.4_3
 libtomahawk-playdarapi.so.0.8.4 tomahawk-qt5-0.8.4_3
@@ -2134,7 +2135,6 @@ libopenrawgnome.so.7 libopenraw-0.1.0_1
 libgeda.so.42 geda-1.8.2_1
 libclutter-gst-3.0.so.0 clutter-gst3-3.0.4_1
 libgsound.so.0 gsound-1.0.1_1
-libmediaart-2.0.so.0 libmediaart2-1.9.0_1
 libgegl-0.3.so.0 gegl3-0.3.0_1
 libgegl-npd-0.3.so gegl3-0.3.0_1
 libgegl-sc-0.3.so gegl3-0.3.0_1
@@ -2801,3 +2801,6 @@ libvirt-admin.so.0 libvirt-3.1.0_1
 libnss_libvirt.so.2 libvirt-3.1.0_1
 libassimp.so.3 libassimp-3.3.1_1
 libdouble-conversion.so.1 double-conversion-2.0.1_1
+libspectrum.so.8 libspectrum-1.2.2_1
+libbearssl.so.0 bearssl-0.3_1
+libXfont2.so.2 libXfont2-2.0.1_1
