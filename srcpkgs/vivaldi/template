@@ -1,6 +1,6 @@
 # Template file for 'vivaldi'
 pkgname=vivaldi
-version=1.8.770.50
+version=1.9.818.44
 revision=1
 _release=1
 only_for_archs="i686 x86_64"
@@ -14,10 +14,10 @@ nopie=yes
 
 if [ "${XBPS_TARGET_MACHINE}" = "x86_64" ];then
 	_debarch=amd64
-	checksum=361c6681cd27ce64ffa6f34a98f13e053ce6fd31ac4c84e7c4e40b6de0a6144f
+	checksum=7821b002c975a46ad29d367b89e22dab9a6f8f99f5d36bcf99a55194dae3f32a
 else
 	_debarch=i386
-	checksum=a224c5c227522cdd776af0993e47251fd85f75a216148683f2241d36fda0fe79
+	checksum=ddd50af0ad4fa25cfd9ce4c77ccf083b38d9e4694bbf6cf61dab7ecbc207ce77
 fi
 
 distfiles="https://downloads.vivaldi.com/stable/vivaldi-stable_${version}-${_release}_${_debarch}.deb"

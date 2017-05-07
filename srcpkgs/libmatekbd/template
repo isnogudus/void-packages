@@ -1,6 +1,6 @@
 # Template file for 'libmatekbd'
 pkgname=libmatekbd
-version=1.18.0
+version=1.18.2
 revision=1
 build_style=gnu-configure
 configure_args="--disable-static $(vopt_enable gir introspection)"
@@ -12,7 +12,7 @@ maintainer="Juan RP <xtraeme@voidlinux.eu>"
 license="LGPL-3"
 homepage="http://mate-desktop.org"
 distfiles="http://pub.mate-desktop.org/releases/${version%.*}/${pkgname}-${version}.tar.xz"
-checksum=31bfd3891079e32b27e479a40ab8dbfbe4b44b66d6b39fe7c2b9be9aef6695e3
+checksum=03df100cf931a1f6880a32b0b3eb90e82e81f6d17085bb44a2a7ca8551a00b0c
 
 build_options="gir"
 if [ -z "$CROSS_BUILD" ]; then

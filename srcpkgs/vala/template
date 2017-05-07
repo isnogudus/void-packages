@@ -1,6 +1,6 @@
 # Template file for 'vala'
 pkgname=vala
-version=0.34.7
+version=0.36.3
 revision=1
 build_style=gnu-configure
 configure_args="--enable-vapigen"
@@ -11,7 +11,7 @@ maintainer="Juan RP <xtraeme@voidlinux.eu>"
 homepage="http://live.gnome.org/Vala"
 license="LGPL-2.1"
 distfiles="${GNOME_SITE}/vala/${version%.*}/vala-${version}.tar.xz"
-checksum=1b2cb14f377d4c41fa3a86d3d01b93017015ce91b6714a85f27346073b4034fa
+checksum=ac8a4ecd01f62d0c5f62ba50b7290d8c5a1edb308eec772a65b8e79be68f061c
 
 libvala_package() {
 	short_desc+=" - shared library"

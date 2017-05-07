@@ -1,5 +1,5 @@
 # Template file for 'google-chrome'
-_chromeVersion=57.0.2987.133
+_chromeVersion=58.0.3029.96
 _chromeRevision=1
 _channel=stable
 
@@ -20,7 +20,7 @@ _filename="google-chrome-${_channel}_${_chromeVersion}-${_chromeRevision}_amd64.
 _chromeUrl="${_baseUrl}/${_filename}"
 
 distfiles="${_chromeUrl}"
-checksum=4a62a77b3c7960f9313d41a40f645b7178d6a8b91f9f1141d7664026692ef63d
+checksum=15b943941c827ef1a4fa19cb5346b8ad4f3d07a66b0d0a6ba63a39274782661a
 
 do_extract() {
 	mkdir -p ${DESTDIR}

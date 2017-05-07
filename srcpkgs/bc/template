@@ -1,6 +1,6 @@
 # Template file for 'bc'
 pkgname=bc
-version=1.07
+version=1.07.1
 revision=1
 build_style=gnu-configure
 configure_args="--with-readline"
@@ -11,8 +11,9 @@ maintainer="Juan RP <xtraeme@voidlinux.eu>"
 homepage="http://www.gnu.org/software/${pkgname}/"
 license="GPL-3"
 distfiles="${GNU_SITE}/${pkgname}/${pkgname}-${version}.tar.gz"
-checksum=55cf1fc33a728d7c3d386cc7b0cb556eb5bacf8e0cb5a3fcca7f109fc61205ad
+checksum=62adfca89b0a1c0164c2cdca59ca210c1d44c3ffc46daf9931cf4942664cb02a
 disable_parallel_build=yes
+nocross="https://build.voidlinux.eu/builders/armv7l_builder/builds/2093/steps/shell_3/logs/stdio"
 
 if [ "$CROSS_BUILD" ]; then
 	hostmakedepends+=" bc"

@@ -53,13 +53,17 @@ The `template files` are `GNU bash` shell scripts that must define some required
 `variables` and `functions` that are processed by `xbps-src` (the package builder)
 to generate the resulting binary packages.
 
+By convention, all templates start with a comment briefly explaining what they
+are. In addition, pkgname and version can't have any characters in them that
+would require them to be quoted, so they are not quoted.
+
 A simple `template` example is as follows:
 
 ```
 # Template file for 'foo'
 
-pkgname="foo"
-version="1.0"
+pkgname=foo
+version=1.0
 revision=1
 build_style=gnu-configure
 short_desc="A short description max 72 chars"
@@ -645,7 +649,10 @@ arguments can be passed in via `configure_args`.
 - `gnu-makefile` For packages that use GNU make, build arguments can be passed in via
 `make_build_args` and install arguments via `make_install_args`. The build
 target can be overridden via `make_build_target` and the install target
-via `make_install_target`.
+via `make_install_target`. This build style tries to compensate for makefiles
+that do not respect environment variables, so well written makefiles, those
+that do such things as append (`+=`) to variables, should have `make_use_env`
+set in the body of the template.
 
 - `go` For programs written in Go that follow the standard package
   structure. The variable `go_import_path` must be set to the package's

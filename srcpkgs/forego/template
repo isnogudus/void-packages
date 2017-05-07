@@ -1,11 +1,11 @@
 # Template file for 'forego'
 pkgname=forego
 version=20170327195458
-revision=1
+revision=2
 build_style=go
 hostmakedepends="git mercurial"
 short_desc="A process supervisor in Go"
-maintainer="Andrea Brancaleoni <miwaxe@gmail.com>"
+maintainer="Andrea Brancaleoni <abc@pompel.me>"
 license="Apache-2.0"
 go_import_path="github.com/ddollar/forego"
 homepage="https://$go_import_path"
